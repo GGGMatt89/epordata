@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1900"
+   height="1250"
+   viewBox="0 0 502.70832 330.72918"
+   version="1.1"
+   id="svg8"
+   inkscape:export-filename="/Users/mattia.fontana/Sites/epordata/website/img/products/LAVORO.png"
+   inkscape:export-xdpi="23.040001"
+   inkscape:export-ydpi="23.040001"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="products.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient878">
+      <stop
+         style="stop-color:#e60000;stop-opacity:1;"
+         offset="0"
+         id="stop874" />
+      <stop
+         style="stop-color:#e60000;stop-opacity:0;"
+         offset="1"
+         id="stop876" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient878"
+       id="linearGradient880"
+       x1="121.21875"
+       y1="421.11015"
+       x2="387.87076"
+       y2="421.11015"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#052042"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.24748737"
+     inkscape:cx="1148.3101"
+     inkscape:cy="455.08596"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1280"
+     inkscape:window-height="702"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,33.729183)">
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke-width:0.26458332"
+       id="rect38"
+       width="502.70834"
+       height="330.72916"
+       x="-0.75595093"
+       y="-33.351204" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot58"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:85.33333588px;line-height:1.25;font-family:'Montserrat Subrayada';-inkscape-font-specification:'Montserrat Subrayada, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#e60000;fill-opacity:1;stroke:none"
+       transform="matrix(0.87265424,0,0,0.87265424,-14.214667,-238.85435)"><flowRegion
+         id="flowRegion60"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:85.33333588px;font-family:'Montserrat Subrayada';-inkscape-font-specification:'Montserrat Subrayada, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#e60000;fill-opacity:1"><rect
+           id="rect62"
+           width="1624.3253"
+           height="408.10162"
+           x="121.21831"
+           y="373.18759"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:85.33333588px;font-family:'Montserrat Subrayada';-inkscape-font-specification:'Montserrat Subrayada, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#e60000;fill-opacity:1" /></flowRegion><flowPara
+         id="flowPara64"
+         style="fill:#e60000;fill-opacity:1">lavoro</flowPara></flowRoot>  </g>
+</svg>

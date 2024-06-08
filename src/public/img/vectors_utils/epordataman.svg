@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Layer_1"
+   enable-background="new 0 0 512 512"
+   height="150"
+   viewBox="0 0 150 150"
+   width="150"
+   version="1.1"
+   sodipodi:docname="epordataman.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   inkscape:export-filename="/Users/mattia.fontana/Desktop/epordataman.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <metadata
+     id="metadata881">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs879" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
+     id="namedview877"
+     showgrid="false"
+     inkscape:zoom="2.6484375"
+     inkscape:cx="126.62098"
+     inkscape:cy="44.554572"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <path
+     style="fill:#06e100;stroke-width:0.223777;fill-opacity:1"
+     inkscape:connector-curvature="0"
+     id="path868"
+     d="m 62.382263,50.636075 c 0,-11.440152 7.465648,-21.134843 17.790271,-24.48277 -2.502274,-0.811192 -5.171486,-1.251585 -7.944083,-1.251585 -14.212749,0 -25.734355,11.521606 -25.734355,25.734355 0,14.212749 11.521606,25.734355 25.734355,25.734355 2.772597,0 5.441809,-0.440393 7.944083,-1.251585 C 69.847911,71.770918 62.382263,62.076227 62.382263,50.636075 Z" />
+  <path
+     style="fill:#0000f7;fill-opacity:1;stroke-width:0.223777"
+     inkscape:connector-curvature="0"
+     id="path870"
+     d="m 114.6926,135 c -2.47184,0 -4.47554,-2.0037 -4.47554,-4.47554 0,-17.52151 -14.254821,-31.77633 -31.776336,-31.77633 h -6.71331 c -17.521515,0 -31.776334,14.25482 -31.776334,31.77633 C 39.95108,132.9963 37.947381,135 35.47554,135 33.003699,135 31,132.9963 31,130.52446 31,108.06732 49.270273,89.79705 71.727414,89.79705 h 6.71331 c 22.457136,0 40.727416,18.27027 40.727416,40.72741 0,2.47184 -2.0037,4.47554 -4.47554,4.47554 z m -9.84619,-84.363925 c 0,-16.657736 -13.552159,-30.209895 -30.209895,-30.209895 -16.657736,0 -30.209895,13.552159 -30.209895,30.209895 0,16.657736 13.552159,30.209895 30.209895,30.209895 16.657736,0 30.209895,-13.552159 30.209895,-30.209895 z m -8.95108,0 c 0,11.722111 -9.536704,21.258815 -21.258815,21.258815 -11.722111,0 -21.258815,-9.536704 -21.258815,-21.258815 0,-11.722111 9.536704,-21.258815 21.258815,-21.258815 11.722111,0 21.258815,9.536704 21.258815,21.258815 z" />
+  <path
+     style="fill:#ff0000;fill-opacity:1;stroke-width:0.223777"
+     inkscape:connector-curvature="0"
+     id="path872"
+     d="m 74.860292,135 c -0.776059,0 -1.551893,-0.20162 -2.24605,-0.60442 L 54.488305,123.87806 c -1.042577,-0.60487 -1.796929,-1.6047 -2.092762,-2.77327 -0.29561,-1.16833 -0.107413,-2.40672 0.521848,-3.43475 l 6.71331,-10.96507 c 1.290522,-2.10798 4.045888,-2.77058 6.153867,-1.48006 2.10798,1.29074 2.770583,4.04589 1.479838,6.15387 l -4.320463,7.05703 11.943202,6.93015 12.251567,-6.93754 -4.424295,-6.99348 c -1.321403,-2.08873 -0.699527,-4.8535 1.389432,-6.1749 2.08851,-1.32163 4.853499,-0.6993 6.174902,1.38921 l 6.937087,10.96507 c 0.654995,1.03519 0.856842,2.29349 0.558995,3.48152 -0.298071,1.18826 -1.069878,2.20219 -2.135951,2.80572 L 77.065391,134.41908 C 76.381304,134.80644 75.620462,135 74.860292,135 Z" />
+  <circle
+     style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:7.85533142;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path885"
+     cx="76.041298"
+     cy="75.244835"
+     r="70.072334" />
+</svg>
