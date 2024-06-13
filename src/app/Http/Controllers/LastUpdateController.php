@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\LastUpdate;
+use App\Models\LastUpdate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +18,7 @@ class LastUpdateController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *

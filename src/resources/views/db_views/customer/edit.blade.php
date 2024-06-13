@@ -210,7 +210,7 @@
           <div class="card">
             <div class="card-header" id="headingRef">
               <h5 class="mb-0">
-              <button type='button' class="btn btn-link" data-toggle="collapse" data-target="#collapseRef" aria-expanded="true" aria-controls="collapseRef">
+              <button type='button' class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseRef" aria-expanded="true" aria-controls="collapseRef">
                 <i class="fas fa-chevron-down"></i>  Referente cliente (opzionale)
               </button>
               </h5>
@@ -266,7 +266,7 @@
     </form>
   </div>
 </div>
-  <script>
+  <script type="module">
     $(document).ready(function () {
     $("#collapseRef").on("hide.bs.collapse", function () {
         $(".btn-link").html('<i class="fas fa-chevron-down"></i>  Referente cliente (opzionale)');

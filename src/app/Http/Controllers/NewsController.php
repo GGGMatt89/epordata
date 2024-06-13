@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use App\News;
+use App\Models\News;
 use ImageResize;
 
 class NewsController extends Controller

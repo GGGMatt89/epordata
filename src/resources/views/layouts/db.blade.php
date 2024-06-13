@@ -25,7 +25,7 @@
     <script src='/lib/fullcalendar/core/locales/es.js'></script>
 
     <!-- Bootstrap select -->
-    {{-- <link rel="stylesheet" href="/lib/selectpicker/dist/css/bootstrap-select.min.css"> --}}
+    <link rel="stylesheet" href="/lib/selectpicker/dist/css/bootstrap-select.min.css">
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/png" href="/img/main_home/epordata.ico"/>
 </head>
@@ -33,13 +33,10 @@
 <body id="page-top">
 
 <!-- SCRIPT SECTION  -->
-  <!-- Bootstrap core JavaScript -->
-  {{-- <script src="/lib/jquery/jquery-3.4.1.min.js"></script> --}}
-
   <!-- Plugin JavaScript -->
-  {{-- <script src="/lib/jquery-easing/jquery.easing.min.js"></script> --}}
+  <script type="module" src="/lib/jquery-easing/jquery.easing.min.js"></script>
   <!-- Bootstrap select script -->
-  {{-- <script src="/lib/selectpicker/dist/js/bootstrap-select.min.js"></script> --}}
+  <script type="module" src="/lib/selectpicker/js/bootstrap-select.js"></script>
   {{-- Template scripts --> clean and integrate in main file --}}
   <script src="/js/db_main.js"></script>
 
@@ -65,6 +62,7 @@
             </div>{{-- end sidebar column --}}
         </div> {{-- end row --}}
     </div>
+
     {{-- end main container --}}
 
     {{-- @yield('footerbar') --}}

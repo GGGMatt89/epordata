@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
-use App\Provider;
+use App\Models\Product;
+use App\Models\Provider;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 

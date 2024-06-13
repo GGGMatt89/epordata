@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Profile;
-use App\Customer;
-use App\Meeting;
+use App\Models\Profile;
+use App\Models\Customer;
+use App\Models\Meeting;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;

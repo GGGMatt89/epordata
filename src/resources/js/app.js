@@ -1,11 +1,12 @@
 // STYLING
 import '../sass/app.scss';
 
-// JQUERY
-import $ from 'jquery';
-window.$ = $;
 
 import './bootstrap';
+
+// JQUERY
+import jQuery from 'jquery';
+window.$ = window.jQuery = jQuery;
 
 // TEMPLATE
 import './template/agency';

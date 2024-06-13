@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Participant;
-use App\Lecture;
-use App\Customer;
+use App\Models\Participant;
+use App\Models\Lecture;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
@@ -35,7 +35,7 @@ class ParticipantController extends Controller
             $lecture_id = null;
             $customer = Customer::where('id', request('customer_id'))->firstOrFail();
             $page_title = ucfirst($customer->title).' '.$customer->last_name.' partecipa a';
-            $table_title = "Corso";     
+            $table_title = "Corso";
         }
         else if(request('lecture_id')){
             $participants = Participant::where('lecture_id', request('lecture_id'))->get();
@@ -67,7 +67,7 @@ class ParticipantController extends Controller
             $lectures = Lecture::all();
             $customers = Customer::where('id', request('customer_id'))->firstOrFail();
             $page_title = 'Iscrizione di '.$customers->title.' '.$customers->last_name.' ad un corso / seminario';
-            $assoc = 'customer';     
+            $assoc = 'customer';
         }
         else if(request('lecture_id')){
             $lectures = Lecture::where('id', request('lecture_id'))->firstOrFail();
@@ -81,7 +81,7 @@ class ParticipantController extends Controller
             $page_title = 'Iscrivi cliente ad un corso / seminario';
             $assoc = null;
         }
-        return view('db_views.participant.create', ['page_title'=>$page_title, 'assoc'=> $assoc, 'customers' => $customers, 'lectures'=>$lectures, 'roles'=>$this->roles]); 
+        return view('db_views.participant.create', ['page_title'=>$page_title, 'assoc'=> $assoc, 'customers' => $customers, 'lectures'=>$lectures, 'roles'=>$this->roles]);
     }
 
     /**
@@ -157,11 +157,11 @@ class ParticipantController extends Controller
             'last_name'=>'required|max:100'
         ]);
         if(request('payed') == 'on'){
-            $validatedFields['payed'] = true;  
+            $validatedFields['payed'] = true;
         }
         else{
             $validatedFields['payed'] = false;
         }
-        return $validatedFields;  
+        return $validatedFields;
     }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Lecture;
-use App\Product;
+use App\Models\Lecture;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class LectureController extends Controller

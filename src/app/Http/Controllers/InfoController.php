@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use App\Info;
+use App\Models\Info;
 use ImageResize;
 
 class InfoController extends Controller
@@ -33,7 +33,7 @@ class InfoController extends Controller
     }
 
     public function show(Info $info)
-    { 
+    {
         return view('db_views.info.show', ['info' => $info]);
     }
 
@@ -60,7 +60,7 @@ class InfoController extends Controller
     }
 
     public function update(Request $request, Info $info)
-    {   
+    {
         if($request->hasFile('image_path')) {
             $validatedAttributes = $this->validateInfo();
             $imageuploaded = request()->file('image_path');
@@ -70,8 +70,8 @@ class InfoController extends Controller
         else{
             $validatedAttributes = $this->validateInfoNoImg();
         }
-        $info->update($validatedAttributes); 
-        return redirect()->route('info.show', ['info' => $info])->with('success_update', 'Salvata!')->with('alert_text', 'Scheda info modificata!'); ; 
+        $info->update($validatedAttributes);
+        return redirect()->route('info.show', ['info' => $info])->with('success_update', 'Salvata!')->with('alert_text', 'Scheda info modificata!'); ;
     }
 
     public function destroy(Info $info)
@@ -109,7 +109,7 @@ class InfoController extends Controller
     }
 
     protected function uploadImage($imageuploaded)
-    {       
+    {
         $imagename = time() . '_info.' . $imageuploaded->extension();
         $storepath = config('app.local_public_path').'img/infos';
         $imageresized = ImageResize::make($imageuploaded->path());

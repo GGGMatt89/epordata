@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Purchase;
-use App\Customer;
-use App\Product;
+use App\Models\Purchase;
+use App\Models\Customer;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +22,7 @@ class PurchaseController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +36,7 @@ class PurchaseController extends Controller
             $product_id = null;
             $customer = Customer::where('id', request('customer_id'))->firstOrFail();
             $page_title = $customer->title." ".$customer->first_name." ".$customer->last_name;
-            $table_title = "Prodotto";     
+            $table_title = "Prodotto";
         }
         else if(request('product_id')){
             $purchases = Purchase::where('product_id', request('product_id'))->get();
@@ -54,7 +54,7 @@ class PurchaseController extends Controller
             $table_title = "Cliente - prodotto";
         }
 
-        return view('db_views.purchase.index', ['purchases'=>$purchases, 'customer_id'=>$customer_id, 'product_id'=>$product_id, 'page_title'=>$page_title, 'table_title'=>$table_title]);   
+        return view('db_views.purchase.index', ['purchases'=>$purchases, 'customer_id'=>$customer_id, 'product_id'=>$product_id, 'page_title'=>$page_title, 'table_title'=>$table_title]);
     }
 
     /**
@@ -68,7 +68,7 @@ class PurchaseController extends Controller
             $products = Product::all();
             $customers = Customer::where('id', request('customer_id'))->firstOrFail();
             $page_title = $customers->title." ".$customers->first_name." ".$customers->last_name;
-            $assoc = 'customer';     
+            $assoc = 'customer';
         }
         else if(request('product_id')){
             $products = Product::where('id', request('product_id'))->firstOrFail();
@@ -82,7 +82,7 @@ class PurchaseController extends Controller
             $page_title = '';
             $assoc = null;
         }
-        return view('db_views.purchase.create', ['assoc'=> $assoc, 'page_title'=>$page_title, 'customers' => $customers, 'products'=>$products, 'types'=>$this->types]);    
+        return view('db_views.purchase.create', ['assoc'=> $assoc, 'page_title'=>$page_title, 'customers' => $customers, 'products'=>$products, 'types'=>$this->types]);
     }
 
     /**
@@ -152,7 +152,7 @@ class PurchaseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Purchase $purchase)
-    {   $product = $purchase->product; 
+    {   $product = $purchase->product;
         $purchase->delete();
         return redirect()->route('purchase.index', ['product_id'=>$product->id])->with('success_create', 'Eliminato!')->with('alert_text', 'Acquisto/abbonamento rimosso!');;
     }
@@ -170,7 +170,7 @@ class PurchaseController extends Controller
         if(!isset($validatedFields['expiration'])){
             $validatedFields['expiration'] = null;
         }
-        return $validatedFields;  
+        return $validatedFields;
     }
 
     protected function validatePurchaseFromEdit()
@@ -185,6 +185,6 @@ class PurchaseController extends Controller
         if(!isset($validatedFields['expiration'])){
             $validatedFields['expiration'] = null;
         }
-        return $validatedFields;  
+        return $validatedFields;
     }
 }

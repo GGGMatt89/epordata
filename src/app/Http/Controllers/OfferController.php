@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Offer;
+use App\Models\Offer;
 use ImageResize;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
