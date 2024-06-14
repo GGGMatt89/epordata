@@ -25,7 +25,8 @@
     <script src='/lib/fullcalendar/core/locales/es.js'></script>
 
     <!-- Bootstrap select -->
-    <link rel="stylesheet" href="/lib/selectpicker/dist/css/bootstrap-select.min.css">
+    {{-- <link rel="stylesheet" href="/lib/selectpicker/dist/css/bootstrap-select.min.css"> --}}
+    {{-- <link rel="stylesheet" href="/lib/bootstrap-select-1.14.0-beta3/css/bootstrap-select.min.css"> --}}
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/png" href="/img/main_home/epordata.ico"/>
 </head>
@@ -36,7 +37,8 @@
   <!-- Plugin JavaScript -->
   <script type="module" src="/lib/jquery-easing/jquery.easing.min.js"></script>
   <!-- Bootstrap select script -->
-  <script type="module" src="/lib/selectpicker/js/bootstrap-select.js"></script>
+  {{-- <script type="module" src="/lib/selectpicker/js/bootstrap-select.js"></script> --}}
+  {{-- <script type="module" src="/lib/bootstrap-select-1.14.0-beta3/js/bootstrap-select.js"></script> --}}
   {{-- Template scripts --> clean and integrate in main file --}}
   <script src="/js/db_main.js"></script>
 
