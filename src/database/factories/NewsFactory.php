@@ -1,18 +1,26 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\News;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(News::class, function (Faker $faker) {
-    return [
-        'title'=>$faker->sentence,
-        'excerpt'=>$faker->sentence,
-        'body'=>$faker->text,
-        'preview_title'=>$faker->sentence,
-        'preview_subtitle'=>$faker->sentence,
-        'date'=>$faker->date('Y-m-d', '+1 months'),
-        'image_path'=>'/img/news/default.png'
-    ];
-});
+class NewsFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'title'=>fake()->sentence(),
+            'excerpt'=>fake()->sentence(),
+            'body'=>fake()->text(),
+            'preview_title'=>fake()->sentence(),
+            'preview_subtitle'=>fake()->sentence(),
+            'date'=>fake()->date('Y-m-d', '+1 months'),
+            'image_path'=>'/img/news/default.png'
+        ];
+    }
+}

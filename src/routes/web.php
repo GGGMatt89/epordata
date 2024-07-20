@@ -28,7 +28,7 @@ use App\Http\Controllers\LectureController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/contactMe', 'HomeController@contactMe');
+Route::get('/contactMe', [HomeController::class, 'contactMe']);
 Route::get('/dailyMail', 'HomeController@dailyMail');
 
 // Auth::routes();

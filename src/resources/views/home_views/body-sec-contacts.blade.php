@@ -7,11 +7,11 @@
           <h3 class="section-subheading">Visita il nostro ufficio in <a target="_blank" href="https://www.google.com/maps/place/Via+Camillo+Olivetti,+10%2FB,+10015+Ivrea+TO/@45.4618493,7.8708239,17z/data=!3m1!4b1!4m5!3m4!1s0x47888495557f7391:0xca5c0404752997f6!8m2!3d45.4618493!4d7.8730126">Via Camillo Olivetti 10b</a> ad Ivrea, o scrivici usando il form qui sotto</h3>
         </div>
       </div>
-      <div class="row">
+      {{-- <div class="row">
           <div class="col-lg-12 text-center" id="unesco">
             <a href="https://caffebook.it/2019/03/24/ivrea-la-bella-54-sito-italiano-del-patrimonio-dellunesco/" target="_blank" class="btn btn-primary btn-xl text-uppercase"><i class="fas fa-archway" style="padding-right: 20px"></i>IVREA - 54° sito italiano patrimonio UNESCO</a>
           </div>
-        </div>
+        </div> --}}
       <div class="row">
         <div class="col-lg-12">
           <form id="contactForm" name="sentMessage" novalidate="novalidate">

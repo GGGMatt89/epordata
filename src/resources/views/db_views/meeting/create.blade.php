@@ -1,7 +1,7 @@
 @extends ('layouts.db')
 
 @section('main_content_page')
-<script src="/js/forms_handling.js"></script>
+<script src="/js/forms_handling.js" type="module"></script>
   <div class='row'>
     <div class='col-12'>
       <h3 class='section_title'>Nuovo appuntamento</h3>
@@ -9,7 +9,7 @@
       <form method='POST' action='{{ route("meeting.store") }}'>
         @csrf
         <input name="customer_id" id="cust-id" type="hidden">
-        <div class="form-row">
+        <div class="row">
           <div class="form-group col-12">
             <label class='db_form_label' for="cust-select">Cliente</label>
             <select class="selectpicker show-tick form-control" id="cust-select" data-size="5" data-live-search="true">
@@ -31,7 +31,7 @@
             </select>
           </div>
         </div>
-        <div class='form-row'>
+        <div class='row'>
           <div class="form-group col-sm-12 col-md-6">
             <label class='db_form_label' for="cust_name">Nome</label>
             <input type="text" class="form-control {{ $errors->has('cust_name') ? 'form-error' : ''}}" name="cust_name" id="cust-name" value="{{ old('cust_name') }}" placeholder="Nome">
@@ -47,7 +47,7 @@
             @enderror
           </div>
         </div>
-        <div class='form-row'>
+        <div class='row'>
           <div class="form-group col-12 col-md-9">
             <label class='db_form_label' for="meet_address">Indirizzo appuntamento</label>
             <input type="text" class="form-control {{ $errors->has('meet_address') ? 'form-error' : ''}}" name="meet_address" id="meet-place" value="{{ old('meet_address') }}" placeholder="Sede appuntamento">
@@ -68,7 +68,7 @@
           @enderror
         </div>
         </div>
-        <div class='form-row'>
+        <div class='row'>
           <div class="form-group col-sm-12 col-md-6">
             <label class='db_form_label' for="meet_date">Data</label>
             <input type="date" class="form-control {{ $errors->has('meet_date') ? 'form-error' : ''}}" name="meet_date" id="meet-date" value="{{ old('meet_date') }}" placeholder="Data">
@@ -84,7 +84,7 @@
             @enderror
           </div>
         </div>
-        <div class='form-row'>
+        <div class='row'>
           <div class="form-group col-sm-12 col-md-6">
             <label class='db_form_label' for="notes">Note/dettagli</label>
             <input type="text" class="form-control {{ $errors->has('notes') ? 'form-error' : ''}}" name="notes" id="meet-notes" value="{{ old('notes') }}" placeholder="Note">

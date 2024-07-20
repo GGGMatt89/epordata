@@ -12,61 +12,53 @@
             <a role="button" class="btn btn-dark-blue btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Aggiungi" href="{{ route('product.create') }}"><i class="fas fa-plus"></i></a>
         </div>
         <div class='col-sm-9 col-md-11'>
-        <div id="accordion" class="filters">
-            <div class="card">
-                <div class="card-header" id="headingRef">
-                    <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseRef" aria-expanded="true" aria-controls="collapseRef">
-                        <i class="fas fa-chevron-down"></i> Filtri di ricerca
+            <div class="accordion filters" id="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingRef">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRef" aria-expanded="true" aria-controls="collapseRef">
+                        Filtri di ricerca
                     </button>
-                    </h5>
-                </div>
-                <div id="collapseRef" class="collapse" aria-labelledby="headingRef" data-parent="#accordion">
-                    <div class="card-body">
+                  </h2>
+                  <div id="collapseRef" class="accordion-collapse collapse" aria-labelledby="headingRef" data-bs-parent="#accordion">
+                    <div class="accordion-body">
                         <form method='GET' action='{{ route("product.index") }}'>
-                        @csrf
-                        <div class='form-row'> 
-                          <div class="form-group col-12 col-md-5">
-                            <label class='db_form_label' for="type">Tipo</label>
-                            <select class="selectpicker show-tick form-control" data-size="5" id="type" name="type">
-                              <option value='unselected'>Seleziona tipo prodotto</option>
-                              <option data-divider="true"></option>
-                              @foreach($types as $type)
-                                <option value="{{$type}}" {{$old_type == $type ? 'selected' : ''}}>{{$type}}</option>
-                              @endforeach
-                            </select>
-                          </div>
-                          <div class="form-group col-12 col-md-5">
-                            <label class='db_form_label' for="category">Categoria</label>
-                            <select class="selectpicker show-tick form-control" data-size="5" name="category" id="category">
-                              <option value='unselected'>Seleziona categoria prodotto</option>
-                              <option data-divider="true"></option>
-                              @foreach($categories as $category)
-                                <option value="{{$category}}" {{$old_cat == $category ? 'selected' : ''}}>{{$category}}</option>
-                              @endforeach
-                            </select>
-                          </div>
-                        <div class='col-2 col-md-2' style='padding-top:1.75rem'>
-                            <button type="submit" class="btn btn-dark-blue-out"><i class="fas fa-search"></i> Applica</button>
+                            @csrf
+                            <div class='form-row'>
+                              <div class="form-group col-12 col-md-5">
+                                <label class='db_form_label' for="type">Tipo</label>
+                                <select class="selectpicker show-tick form-control" data-size="5" id="type" name="type">
+                                  <option value='unselected'>Seleziona tipo prodotto</option>
+                                  <option data-divider="true"></option>
+                                  @foreach($types as $type)
+                                    <option value="{{$type}}" {{$old_type == $type ? 'selected' : ''}}>{{$type}}</option>
+                                  @endforeach
+                                </select>
+                              </div>
+                              <div class="form-group col-12 col-md-5">
+                                <label class='db_form_label' for="category">Categoria</label>
+                                <select class="selectpicker show-tick form-control" data-size="5" name="category" id="category">
+                                  <option value='unselected'>Seleziona categoria prodotto</option>
+                                  <option data-divider="true"></option>
+                                  @foreach($categories as $category)
+                                    <option value="{{$category}}" {{$old_cat == $category ? 'selected' : ''}}>{{$category}}</option>
+                                  @endforeach
+                                </select>
+                              </div>
+                            <div class='col-2 col-md-2' style='padding-top:1.75rem'>
+                                <button type="submit" class="btn btn-dark-blue-out"><i class="fas fa-search"></i> Applica</button>
+                            </div>
+                            </div>
+                            </form>
                         </div>
-                        </div>
-                        </form>
-                    </div>
+                  </div>
                 </div>
             </div>
         </div>
-        </div>
-        {{-- <div class='col-sm-8 col-md-10'>
-            <input class="form-control" type="text" placeholder="Cerca...">
-        </div>
-        <div class='col-sm-2 col-md-1'>
-            <button type="button" class="btn btn-dark-blue-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Trova" href="#"><i class="fas fa-search"></i></button>
-        </div> --}}
     </div>
-    <div class='table-responsive' id='products_table' style='padding-top: 20px;'>
-        <table class="table table-hover">
+    <div class='table-responsive' id='products_table'>
+        <table class="table table-hover align-middle">
         <thead>
-            <tr class="bg-table-header">
+            <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Codice</th>
                 <th scope="col">Tipo</th>
@@ -95,21 +87,21 @@
                 </td>
             </tr>
             @empty
-                <tr> 
+                <tr>
                         <th scope="row" colspan="8">Nessun prodotto</th>
                     </tr>
             @endforelse
         </tbody>
         </table>
     </div>
-<script>
-    $(document).ready(function () {
-    $("#collapseRef").on("hide.bs.collapse", function () {
-        $(".btn-link").html('<i class="fas fa-chevron-down"></i>  Filtri di ricerca');
-    });
-    $("#collapseRef").on("show.bs.collapse", function () {
-        $(".btn-link").html('<i class="fas fa-chevron-up"></i>  Filtri di ricerca');
-    });
-});
-</script>  
+<script type="module">
+    // $(document).ready(function () {
+    // $("#collapseRef").on("hide.bs.collapse", function () {
+    //     $(".btn-link").html('<i class="fas fa-chevron-down"></i>  Filtri di ricerca');
+    // });
+    // $("#collapseRef").on("show.bs.collapse", function () {
+    //     $(".btn-link").html('<i class="fas fa-chevron-up"></i>  Filtri di ricerca');
+    // });
+// });
+</script>
 @endsection

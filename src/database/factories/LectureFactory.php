@@ -1,20 +1,29 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\Lecture;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Product;
 
-$factory->define(Lecture::class, function (Faker $faker) {
-    return [
-        'title' => $faker->sentence,
-        'beginning'=> $faker->date('Y-m-d', 'now'),
-        'end' => $faker->date('Y-m-d', 'now'), 
-        'last' => $faker->sentence(3), 
-        'place'=> $faker->address,
-        'cfp' => $faker->randomFloat(2, 0, 100), 
-        'price' => $faker->randomFloat(2, 0, 1000), 
-        'description' => $faker->text, 
-        'product_id' => factory(\App\Product::class)
-    ];
-});
+class LectureFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'title' => fake()->sentence(),
+            'beginning'=> fake()->date('Y-m-d', 'now'),
+            'end' => fake()->date('Y-m-d', 'now'),
+            'last' => fake()->sentence(3),
+            'place'=> fake()->address(),
+            'cfp' => fake()->randomFloat(2, 0, 100),
+            'price' => fake()->randomFloat(2, 0, 1000),
+            'description' => fake()->text(),
+            'product_id' => Product::factory()
+        ];
+    }
+}

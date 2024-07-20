@@ -1,18 +1,29 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\Meeting;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Meeting::class, function (Faker $faker) {
-    return [
-        'customer_id' => factory(\App\Customer::class),
-        'user_id' => factory(\App\User::class),
-        'cust_name' => $faker->firstName, 
-        'cust_surname' => $faker->lastName, 
-        'meet_address' => $faker->sentence, 
-        'scheduled_at' => $faker->dateTimeThisMonth('now', 'Europe/Rome'), 
-        'notes' => $faker->sentence
-    ];
-});
+use App\Models\User;
+use App\Models\Customer;
+
+class MeetingFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'customer_id' => Customer::factory(),
+            'user_id' => User::factory(),
+            'cust_name' => fake()->firstName(),
+            'cust_surname' => fake()->lastName(),
+            'meet_address' => fake()->sentence(),
+            'scheduled_at' => fake()->dateTimeThisMonth('now', 'Europe/Rome'),
+            'notes' => fake()->sentence()
+        ];
+    }
+}

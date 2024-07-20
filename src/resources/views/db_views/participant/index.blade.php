@@ -2,9 +2,9 @@
 
 @section ('main_content_page')
     <div class='row'>
-        <div class='col-12'>  
+        <div class='col-12'>
             @if(isset($page_title))
-                <h5 class='section_title'>{{ $page_title }}</h5>  
+                <h5 class='section_title'>{{ $page_title }}</h5>
             @endif
         </div>
     </div>
@@ -19,8 +19,8 @@
             <button type="button" class="btn btn-dark-blue-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Trova" href="#"><i class="fas fa-search"></i></button>
         </div> --}}
     </div>
-    <div class='table-responsive' id='participants_table' style='padding-top: 20px;'>
-        <table class="table table-hover">
+    <div class='table-responsive' id='participants_table'>
+        <table class="table table-hover align-middle">
         <thead>
             <tr class="bg-table-header">
                 <th scope="col">{{ $table_title }}</th>
@@ -38,10 +38,10 @@
                     <th scope="row">{{ $participant->lecture->title }}</th>
                 @endif
                 @if(isset($lecture_id))
-                    <th scope="row">{{ $participant->last_name }} {{ $participant->first_name }}</th>  
+                    <th scope="row">{{ $participant->last_name }} {{ $participant->first_name }}</th>
                 @endif
                 @if(!isset($customer_id) && !isset($lecture_id))
-                    <th scope="row">{{ $participant->last_name }} <br> {{ $participant->lecture->title }}</th>    
+                    <th scope="row">{{ $participant->last_name }} <br> {{ $participant->lecture->title }}</th>
                 @endif
                 <td>{{ $participant->role }}</td>
                 <td class={{ $participant->payed ? 'checked-td' : 'unchecked-td'}}>
@@ -60,7 +60,7 @@
                     </form>
                 </td></tr>
             @empty
-                <tr> 
+                <tr>
                     <th scope="row" colspan="6">Nessun iscritto</th>
                 </tr>
             @endforelse

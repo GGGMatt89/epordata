@@ -17,8 +17,8 @@ $(function() {
       if (firstName.indexOf(' ') >= 0) {
         firstName = name.split(' ').slice(0, -1).join(' ');
       }
-      $this = $("#sendMessageButton");
-      $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+      let button = $("#sendMessageButton");
+      button.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
         url: "/contactMe",
         method: "GET",
@@ -33,11 +33,11 @@ $(function() {
       }).done(function (json) {
         if(json.result){
           // Success message
-          $('#success').html("<div class='alert alert-success'>");
-          $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-              .append("</button>");
+          $('#success').html("<div class='alert alert-success alert-dismissible fade show' role='alert'>");
           $('#success > .alert-success')
-              .append("<strong>Messaggio inviato con successo. </strong>");
+              .html("<strong>Messaggio inviato con successo. </strong>");
+          $('#success > .alert-success').append("<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'>")
+              .append("</button>");
           $('#success > .alert-success')
               .append('</div>');
           //clear all fields
@@ -45,16 +45,16 @@ $(function() {
         }
         else{
           // Fail message
-          $('#success').html("<div class='alert alert-danger'>");
-          $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+          $('#success').html("<div class='alert alert-danger alert-dismissible fade show'>");
+          $('#success > .alert-danger').html($("<strong>").text("Spiacente " + firstName + ", sembra che il server non risponda. Riprovi più tardi o scriva a info@epordata.it!"));
+          $('#success > .alert-danger').append("<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'>")
               .append("</button>");
-          $('#success > .alert-danger').append($("<strong>").text("Spiacente " + firstName + ", sembra che il server non risponda. Riprovi più tardi o scriva a info@epordata.it!"));
           $('#success > .alert-danger').append('</div>');
           //clear all fields
           $('#contactForm').trigger("reset");
         }
         setTimeout(function () {
-            $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
+            button.prop("disabled", false); // Re-enable submit button when AJAX call is complete
         }, 1000);
       });
     },
@@ -62,39 +62,6 @@ $(function() {
                   return $(this).is(":visible");
                 },
       });
-        // success: function() {
-        //   // Success message
-        //   $('#success').html("<div class='alert alert-success'>");
-        //   $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-        //     .append("</button>");
-        //   $('#success > .alert-success')
-        //     .append("<strong>Messaggio inviato con successo. </strong>");
-        //   $('#success > .alert-success')
-        //     .append('</div>');
-        //   //clear all fields
-        //   $('#contactForm').trigger("reset");
-        // },
-        // error: function() {
-        //   // Fail message
-        //   $('#success').html("<div class='alert alert-danger'>");
-        //   $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-        //     .append("</button>");
-        //   $('#success > .alert-danger').append($("<strong>").text("Spiacente " + firstName + ", sembra che il server non risponda. Riprovi più tardi o scriva a info@epordata.it!"));
-        //   $('#success > .alert-danger').append('</div>');
-        //   //clear all fields
-        //   $('#contactForm').trigger("reset");
-        // },
-        // complete: function() {
-        //   setTimeout(function() {
-        //     $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
-        //   }, 1000);
-        // }
-      // });
-    // },
-  //   filter: function() {
-  //     return $(this).is(":visible");
-  //   },
-  // });
 
   $("a[data-toggle=\"tab\"]").click(function(e) {
     e.preventDefault();

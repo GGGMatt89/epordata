@@ -18,8 +18,8 @@
             <button type="button" class="btn btn-dark-blue-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Trova" href="#"><i class="fas fa-search"></i></button>
         </div> --}}
     </div>
-    <div class='table-responsive' id='news_table' style='padding-top: 20px;'>
-        <table class="table table-hover">
+    <div class='table-responsive' id='news_table'>
+        <table class="table table-hover align-middle">
         <thead>
             <tr class="bg-table-header">
                 <th scope="col">Titolo</th>
@@ -48,11 +48,11 @@
                 </td>
             </tr>
             @empty
-                <tr> 
+                <tr>
                     <th scope="row" colspan="7">Nessuna scheda news</th>
                 </tr>
             @endforelse
         </tbody>
         </table>
     </div>
-@endsection 
+@endsection

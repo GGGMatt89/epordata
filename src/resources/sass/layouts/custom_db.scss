@@ -698,29 +698,21 @@ table {
     font-size:0.8rem;
 }
 
-.filters .card-header {
-    height: 3rem;
+.filters .accordion-header button{
     font-weight: normal;
-    background-color: #c4c4c4;
+    font-size: 1.0rem;
 }
 
-.filters .card-header button{
-    font-weight: normal;
+.filters  .accordion-item .db_form_label {
+    font-size: 0.8rem;
+}
+
+.filters .accordion-item select {
     font-size: 0.7rem;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 
-.filters  .card .db_form_label {
-    font-size: 0.6rem;
-}
-
-.filters .card select {
-    font-size: 0.6rem;
-}
-
-.filters  .card input {
-    font-size: 0.6rem;
+.filters  .accordion-item input {
+    font-size: 0.7rem;
 }
 
 .preview-container{
@@ -1070,3 +1062,6 @@ hr.show-sep {
     -o-transition: all 0.3s ease-out;
 }
 
+.table thead th {
+    font-size: 1.1rem;
+}

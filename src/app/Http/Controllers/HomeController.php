@@ -8,11 +8,11 @@ use App\Models\Offer;
 use App\Models\Info;
 use App\Models\User;
 use App\Models\LastUpdate;
-use Auth;
 use Carbon\Carbon;
 // use App\Mail\ScheduleMail;
-// use App\Mail\ContactMail;
-// use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -122,24 +122,24 @@ class HomeController extends Controller
     //     }
     //     return 'Task executed';
     // }
-    // public function contactMe()
-    // {
-    //     if (request()->has('name') && request()->has('email') && request()->has('message')) {
-    //         $name = request()->input('name');
-    //         $email_address = request()->input('email');
-    //         if (request()->has('phone')) {
-    //             $phone = request()->input('phone');
-    //         }
-    //         $message = request()->input('message');
-    //         // Create the email and send the message
-    //         $receiver = 'info@epordata.it'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
-    //         $email_subject = "Website Contact Form:  $name";
-    //         $email_body = "Avete ricevuto un nuovo messaggio dal form di contatto online del sito.\n\n" . "Qui i dettagli:\n\nNome: $name\n\nEmail: $email_address\n\nTelefono: $phone\n\nMessaggio:\n$message";
-    //         Mail::to($receiver)
-    //                 ->send(new ContactMail($email_subject, $email_body));
-    //         return response()->json(['result' => true, 'name' => $name, 'email' => $email_subject, 'body' => $email_body]);
-    //     } else {
-    //         return response()->json(['result' => false]);
-    //     }
-    // }
+    public function contactMe()
+    {
+        if (request()->has('name') && request()->has('email') && request()->has('message')) {
+            $name = request()->input('name');
+            $email_address = request()->input('email');
+            if (request()->has('phone')) {
+                $phone = request()->input('phone');
+            }
+            $message = request()->input('message');
+            // Create the email and send the message
+            $receiver = env("MAIL_TO_ADDRESS", 'info@epordata.it'); // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+            $email_subject = "Website Contact Form:  $name";
+            $email_body = "Avete ricevuto un nuovo messaggio dal form di contatto online del sito.\n\n" . "Qui i dettagli:\n\nNome: $name\n\nEmail: $email_address\n\nTelefono: $phone\n\nMessaggio:\n$message";
+            Mail::to($receiver)
+                    ->send(new ContactMail($email_subject, $email_body));
+            return response()->json(['result' => true, 'name' => $name, 'email' => $email_subject, 'body' => $email_body]);
+        } else {
+            return response()->json(['result' => false]);
+        }
+    }
 }

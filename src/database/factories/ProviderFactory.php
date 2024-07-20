@@ -1,28 +1,36 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\Provider;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Provider::class, function (Faker $faker) {
-    return [
-        'bus_name' => $faker->jobTitle, 
-        'code' => $faker->isbn10, 
-        'tax_code' => $faker->isbn10, 
-        'vat_num' => $faker->isbn10, 
-        'email' => $faker->unique()->safeEmail,
-        'office_phone' => $faker->phoneNumber, 
-        'mobile_phone' => $faker->phoneNumber, 
-        'address' => $faker->address, 
-        'city' => $faker->city, 
-        'post_code' => $faker->postcode, 
-        'region' => $faker->country, 
-        'category'=> $faker->randomElement(['Generalista', 'Partner', 'Sponsor', 'Docente']),
-        'ref_name' => $faker->firstName, 
-        'ref_surname'=> $faker->lastName, 
-        'ref_title' => $faker->title, 
-        'ref_phone' => $faker->phoneNumber, 
-        'ref_email' => $faker->unique()->safeEmail
-    ];
-});
+class ProviderFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'bus_name' => fake()->jobTitle(),
+            'code' => fake()->isbn10(),
+            'tax_code' => fake()->isbn10(),
+            'vat_num' => fake()->isbn10(),
+            'email' => fake()->unique()->safeEmail(),
+            'office_phone' => fake()->phoneNumber(),
+            'mobile_phone' => fake()->phoneNumber(),
+            'address' => fake()->address(),
+            'city' => fake()->city(),
+            'post_code' => fake()->postcode(),
+            'region' => fake()->country(),
+            'category'=> fake()->randomElement(['Generalista', 'Partner', 'Sponsor', 'Docente']),
+            'ref_name' => fake()->firstName(),
+            'ref_surname'=> fake()->lastName(),
+            'ref_title' => fake()->title(),
+            'ref_phone' => fake()->phoneNumber(),
+            'ref_email' => fake()->unique()->safeEmail()
+        ];
+    }
+}

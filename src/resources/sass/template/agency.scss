@@ -322,6 +322,8 @@ img::-moz-selection {
 
 #mainNav .navbar-brand img{
   width: 90%;
+  max-height: 70px;
+  padding: 5px;
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
@@ -956,8 +958,10 @@ header.masthead .intro-text .intro-heading {
 }
 
 .team-member img {
-  width: 225px;
-  height: 225px;
+  width: 90%;
+  aspect-ratio: 1 / 1;
+  max-width: 225px;
+  max-height: 225px;
   border: 7px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -1204,4 +1208,10 @@ table {
   border-radius: 50%;
   background: red;
   color: white;
+}
+
+.partner-img {
+    width: 90%;
+    max-width: 200px;
+    padding-top:25px;
 }

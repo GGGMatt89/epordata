@@ -11,15 +11,9 @@
         <div class='col-sm-2 col-md-1'>
             <a role="button" class="btn btn-dark-blue btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Aggiungi" href="{{ route('lecture.create') }}"><i class="fas fa-plus"></i></a>
         </div>
-        {{-- <div class='col-sm-8 col-md-10'>
-            <input class="form-control" type="text" placeholder="Cerca...">
-        </div>
-        <div class='col-sm-2 col-md-1'>
-            <button type="button" class="btn btn-dark-blue-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Trova" href="#"><i class="fas fa-search"></i></button>
-        </div> --}}
     </div>
-    <div class='table-responsive' id='lectures_table' style='padding-top: 20px;'>
-        <table class="table table-hover">
+    <div class='table-responsive' id='lectures_table'>
+        <table class="table table-hover align-middle">
         <thead>
             <tr class="bg-table-header">
             <th scope="col">Titolo</th>

@@ -1,18 +1,18 @@
 @extends ('layouts.db')
 
 @section('main_content_page')
-    <div class="jumbotron" style="width: 80%; margin: auto">
+    <div class="jumbotron" style="width: 80%; margin:auto; padding: 10px;">
         <div class="container">
             <div class='row'>
                 <div class="col-12 col-lg-10">
                     <h3 class="section_title">{{ $profile->first_name}} {{ $profile->last_name}} </h3>
                 </div>
                 <div class='col-1 col-lg-1'>
-                   <a role="button" class="btn btn-dark-blue-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Modifica" href="{{ route('profile.edit', $profile->id) }}"><i class="far fa-edit"></i></a> 
+                   <a role="button" class="btn btn-dark-blue-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Modifica" href="{{ route('profile.edit', $profile->id) }}"><i class="far fa-edit"></i></a>
                 </div>
                 <div class='col-1 col-lg-1'>
-                   <a role="button" class="btn btn-dark-green-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Modifica credenziali" href="{{ route('user.editLimit', $profile->user->id) }}"><i class="fas fa-user-edit"></i></a> 
-                </div>    
+                   <a role="button" class="btn btn-dark-green-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Modifica credenziali" href="{{ route('user.editLimit', $profile->user->id) }}"><i class="fas fa-user-edit"></i></a>
+                </div>
             </div>
             <div class='row'>
                 <div class="form-group col-12 col-lg-6 my-auto">
@@ -27,8 +27,8 @@
                     <p class="lead">{{$profile->user->email }}</p>
                 </div>
             </div>
-            <div class='row'>
-                <hr class='show-sep'>  
+            <div class='row d-flex justify-content-center'>
+                <hr class='show-sep'>
             </div>
             <div class='row'>
                 <div class="form-group col-12 col-lg-2">
@@ -62,4 +62,4 @@
             </div>
         </div>
     </div>
-@endsection 
+@endsection

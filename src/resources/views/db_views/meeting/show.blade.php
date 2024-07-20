@@ -1,7 +1,7 @@
 @extends ('layouts.db')
 
 @section ('main_content_page')
-    <div class="jumbotron" style="width: 80%; margin: auto">
+    <div class="jumbotron" style="width: 80%; margin: auto; padding: 10px;">
         <div class="container">
             <div class='row'>
                 <div class='col-12 col-lg-10'>
@@ -18,7 +18,7 @@
                     </form>
                 </div>
             </div>
-            <div class='row'>
+            <div class='row d-flex justify-content-center'>
                 <hr class='show-sep'>
             </div>
             <div class='row'>

@@ -7,18 +7,10 @@
             <hr class='styled-hr'>
         </div>
     </div>
-    {{-- <div class='row'>
-        <div class='col-sm-8 col-md-11'>
-            <input class="form-control" type="text" placeholder="Cerca...">
-        </div>
-        <div class='col-sm-2 col-md-1'>
-            <button type="button" class="btn btn-dark-blue-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Trova" href="#"><i class="fas fa-search"></i></button>
-        </div>
-    </div> --}}
-    <div class='table-responsive' id='profiles_table' style='padding-top: 20px;'>
-        <table class="table table-hover">
+    <div class='table-responsive' id='profiles_table'>
+        <table class="table table-hover align-middle">
             <thead>
-            <tr class="bg-table-header">
+            <tr>
             <th scope="col">Cognome</th>
             <th scope="col">Nome</th>
             <th scope="col">Cellulare</th>
@@ -47,4 +39,4 @@
             </tbody>
         </table>
     </div>
-@endsection 
+@endsection

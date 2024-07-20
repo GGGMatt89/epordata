@@ -3,13 +3,13 @@
   $url = url()->current();
 @endphp
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="dbNav">
-    <div class="container">
+    <div class="container d-flex justify-content-between">
       <a class="navbar-brand" href="{{ route('home', ['loader'=>false]) }}"><img src="/img/main_home/epordata_logo.png"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
           <li class="nav-item">
             <a class="nav-link {{ strpos($url, 'home') ? 'active' : ''}}" href="{{ route('db_home') }}"><i class="fas fa-home fa-lg"></i>Home personale</a>

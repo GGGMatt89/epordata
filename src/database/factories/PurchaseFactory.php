@@ -1,16 +1,28 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\Purchase;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Purchase::class, function (Faker $faker) {
-    return [
-        'customer_id' => factory(\App\Customer::class),
-        'product_id' => factory(\App\Product::class),
-        'type' => $faker->randomElement(['Singolo', 'Abbonamento']),
-        'expiration' => $faker->dateTimeThisYear('now', 'Europe/Rome'), 
-        'notes' => $faker->sentence
-    ];
-});
+use App\Models\Customer;
+use App\Models\Product;
+
+
+class PurchaseFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'customer_id' => Customer::factory(),
+            'product_id' => Product::factory(),
+            'type' => fake()->randomElement(['Singolo', 'Abbonamento']),
+            'expiration' => fake()->dateTimeThisYear('now', 'Europe/Rome'),
+            'notes' => fake()->sentence()
+        ];
+    }
+}

@@ -12,59 +12,51 @@
             <a role="button" class="btn btn-dark-blue btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Aggiungi" href="{{ route('provider.create') }}"><i class="fas fa-plus"></i></a>
         </div>
         <div class='col-sm-9 col-md-11'>
-        <div id="accordion" class="filters">
-            <div class="card">
-                <div class="card-header" id="headingRef">
-                    <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseRef" aria-expanded="true" aria-controls="collapseRef">
-                        <i class="fas fa-chevron-down"></i> Filtri di ricerca
+            <div class="accordion filters" id="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingRef">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRef" aria-expanded="true" aria-controls="collapseRef">
+                        Filtri di ricerca
                     </button>
-                    </h5>
-                </div>
-                <div id="collapseRef" class="collapse" aria-labelledby="headingRef" data-parent="#accordion">
-                    <div class="card-body">
+                  </h2>
+                  <div id="collapseRef" class="accordion-collapse collapse" aria-labelledby="headingRef" data-bs-parent="#accordion">
+                    <div class="accordion-body">
                         <form method='GET' action='{{ route("provider.index") }}'>
-                        @csrf
-                        <div class='form-row'> 
-                          <div class="form-group col-12 col-md-5">
-                            <label class='db_form_label' for="category">Categoria</label>
-                            <select class="selectpicker show-tick form-control" data-size="5" name="category" id="category">
-                              <option value='unselected'>Seleziona categoria fornitore</option>
-                              <option data-divider="true"></option>
-                              @foreach($categories as $category)
-                                <option value="{{$category}}" {{$old_cat == $category ? 'selected' : ''}}>{{$category}}</option>
-                              @endforeach
-                            </select>
-                          </div>
-                          <div class="form-group col-12 col-md-5">
-                            <label class='db_form_label' for="region">Provincia</label>
-                            <select class="selectpicker show-tick form-control" data-size="5" id="region" name="region">
-                              <option value='unselected'>Seleziona provincia fornitore</option>
-                              <option data-divider="true"></option>
-                              @foreach($regions as $region)
-                                <option value="{{$region}}" {{$old_region == $region ? 'selected' : ''}}>{{$region}}</option>
-                              @endforeach
-                            </select>
-                          </div>
-                        <div class='col-2 col-md-2' style='padding-top:1.75rem'>
-                        <button type="submit" class="btn btn-dark-blue-out"><i class="fas fa-search"></i> Applica</button>
+                            @csrf
+                            <div class='form-row'>
+                              <div class="form-group col-12 col-md-5">
+                                <label class='db_form_label' for="category">Categoria</label>
+                                <select class="selectpicker show-tick form-control" data-size="5" name="category" id="category">
+                                  <option value='unselected'>Seleziona categoria fornitore</option>
+                                  <option data-divider="true"></option>
+                                  @foreach($categories as $category)
+                                    <option value="{{$category}}" {{$old_cat == $category ? 'selected' : ''}}>{{$category}}</option>
+                                  @endforeach
+                                </select>
+                              </div>
+                              <div class="form-group col-12 col-md-5">
+                                <label class='db_form_label' for="region">Provincia</label>
+                                <select class="selectpicker show-tick form-control" data-size="5" id="region" name="region">
+                                  <option value='unselected'>Seleziona provincia fornitore</option>
+                                  <option data-divider="true"></option>
+                                  @foreach($regions as $region)
+                                    <option value="{{$region}}" {{$old_region == $region ? 'selected' : ''}}>{{$region}}</option>
+                                  @endforeach
+                                </select>
+                              </div>
+                            <div class='col-2 col-md-2' style='padding-top:1.75rem'>
+                            <button type="submit" class="btn btn-dark-blue-out"><i class="fas fa-search"></i> Applica</button>
+                            </div>
+                            </div>
+                            </form>
                         </div>
-                        </div>
-                        </form>
-                    </div>
+                  </div>
                 </div>
             </div>
         </div>
-        </div>
-        {{-- <div class='col-sm-8 col-md-10'>
-            <input class="form-control" type="text" placeholder="Cerca...">
-        </div>
-        <div class='col-sm-2 col-md-1'>
-            <button type="button" class="btn btn-dark-blue-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Trova" href="#"><i class="fas fa-search"></i></button>
-        </div> --}}
     </div>
-    <div class='table-responsive' id='providers_table' style='padding-top: 20px;'>
-        <table class="table table-hover">
+    <div class='table-responsive' id='providers_table'>
+        <table class="table table-hover align-middle">
             <thead>
             <tr class="bg-table-header">
             <th scope="col">Nome/RS</th>
@@ -93,7 +85,7 @@
                     </td>
                     </tr>
                 @empty
-                    <tr> 
+                    <tr>
                         <th scope="row" colspan="7">Nessun fornitore</th>
                     </tr>
                 @endforelse

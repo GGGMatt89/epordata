@@ -1,15 +1,15 @@
 @extends ('layouts.db')
 
 @section('main_content_page')
-  <script src="/js/forms_handling_participant.js"></script>
+  <script src="/js/forms_handling_participant.js" type="module"></script>
   <div class='row'>
-    <div class='col-12'>  
+    <div class='col-12'>
     <h3 class='section_title'>{{$page_title ?? ''}}</h3>
-    <hr class='styled-hr'> 
+    <hr class='styled-hr'>
       <form method='POST' action='{{ route("participant.store") }}'>
-        @csrf 
+        @csrf
       @if($assoc == 'customer' || $assoc == null)
-      <div class='form-row'>
+      <div class='row'>
         <div class="form-group col-12 col-md-12">
           @if($assoc == 'customer')
           <input name="customer_id" id="customer_id" value='{{$customers->id}}' type="hidden">
@@ -34,7 +34,7 @@
       </div>
       @endif
       @if($assoc == 'lecture' || $assoc == null)
-       <div class='form-row'>
+       <div class='row'>
         <div class="form-group col-12 col-md-12">
           @if($assoc == 'lecture')
           <input name="lecture_id" id="lecture_id" value='{{$lectures->id}}' type="hidden">
@@ -55,7 +55,7 @@
           @enderror
         </div>
       </div>
-        <div class='form-row'> 
+        <div class='row'>
         <div class="form-group col-sm-12 col-md-6">
           <label class='db_form_label' for="first_name">Nome</label>
           <input type='text' class="form-control {{ $errors->has('first_name') ? 'form-error' : ''}}" name="first_name" id="first_name" value="{{ old('first_name') }}">
@@ -72,7 +72,7 @@
         </div>
       </div>
       @endif
-      <div class='form-row'> 
+      <div class='row'>
         <div class="form-group col-sm-12 col-md-6">
           <label class='db_form_label' for="type">Ruolo</label>
           <select class="form-control {{ $errors->has('role') ? 'form-error' : ''}}" name="role" id="role" value="{{ old('role') }}">
@@ -104,4 +104,4 @@
     </form>
   </div>
 </div>
-@endsection 
+@endsection

@@ -1,13 +1,13 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="/img/main_home/logo_esteso.png"></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ml-auto">
+    <div class="container d-flex justify-content-between">
+        <a class="navbar-brand" href="{{ route('home', ['loader'=>false]) }}"><img src="/img/main_home/epordata_logo.png"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase">
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#services">Servizi</a>
           </li>
@@ -42,7 +42,7 @@
                   {{ Auth::user()->name }}
                   </span>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="{{ route('db_home') }}">Gestionale</a></li>
                   {{-- <a class="dropdown-item" href="#">Calendario</a> --}}
                   <li><a class="dropdown-item" href="{{ route('logout') }}"

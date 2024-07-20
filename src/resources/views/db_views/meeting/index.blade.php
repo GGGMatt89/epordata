@@ -12,18 +12,16 @@
             <a role="button" class="btn btn-dark-blue btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Aggiungi" href="{{ route('meeting.create') }}"><i class="fas fa-plus"></i></a>
         </div>
         <div class='col-sm-9 col-md-11'>
-            <div id="accordion" class="filters">
-                <div class="card">
-                    <div class="card-header" id="headingRef">
-                        <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseRef" aria-expanded="true" aria-controls="collapseRef">
-                            <i class="fas fa-chevron-down"></i> Filtri di ricerca
-                        </button>
-                        </h5>
-                    </div>
-                    <div id="collapseRef" class="collapse" aria-labelledby="headingRef" data-parent="#accordion">
-                        <div class="card-body">
-                            <form method='GET' action='{{ route("meeting.index") }}'>
+            <div class="accordion filters" id="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingRef">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRef" aria-expanded="true" aria-controls="collapseRef">
+                        Filtri di ricerca
+                    </button>
+                  </h2>
+                  <div id="collapseRef" class="accordion-collapse collapse" aria-labelledby="headingRef" data-bs-parent="#accordion">
+                    <div class="accordion-body">
+                        <form method='GET' action='{{ route("meeting.index") }}'>
                             @csrf
                             <div class='form-row'>
                             <div class="form-group col-10 col-md-8">
@@ -65,13 +63,13 @@
                             </div>
                             </form>
                         </div>
-                    </div>
+                  </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class='table-responsive' id='meetings_table' style='padding-top: 20px;'>
-        <table class="table table-hover">
+    <div class='table-responsive' id='meetings_table'>
+        <table class="table table-hover align-middle">
         <thead>
             <tr class="bg-table-header">
                 <th scope="col" colspan="7">Appuntamenti personali</th>

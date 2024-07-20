@@ -1,17 +1,27 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\Product;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Product::class, function (Faker $faker) {
-    return [
-            'name' => $faker->word,
-            'code' => $faker->ean8,
-            'type' => $faker->randomElement(['Editoria', 'Formazione']),
-            'category'=> $faker->randomElement(['Vendita beni', 'Archiviazione', 'Editoria', 'Software', 'Formazione']),
-            'provider_name' => $faker->company,
-            'provider_id'=> factory(\App\Provider::class),
-    ];
-});
+use App\Models\Provider;
+
+class ProductFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+                'name' => fake()->word(),
+                'code' => fake()->ean8(),
+                'type' => fake()->randomElement(['Editoria', 'Formazione']),
+                'category'=> fake()->randomElement(['Vendita beni', 'Archiviazione', 'Editoria', 'Software', 'Formazione']),
+                'provider_name' => fake()->company(),
+                'provider_id'=> Provider::factory(),
+        ];
+    }
+}
