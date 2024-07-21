@@ -18,5 +18,6 @@ import './template/agency';
 // Alpine.start();
 
 // external libraries
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+window.Swal = Swal;
 import 'animate.css';

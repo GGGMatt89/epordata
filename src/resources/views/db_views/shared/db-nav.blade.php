@@ -5,7 +5,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="dbNav">
     <div class="container d-flex justify-content-between">
       <a class="navbar-brand" href="{{ route('home', ['loader'=>false]) }}"><img src="/img/main_home/epordata_logo.png"></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
       </button>

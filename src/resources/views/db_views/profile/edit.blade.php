@@ -79,7 +79,7 @@
             @enderror
           </div>
         </div>
-        <div class='form-row'>
+        <div class='form-row' style="margin-top: 20px;">
           <div class="form-group col-9">
             <label class='db_form_label input-file-label' for="image_path"><i class="fas fa-file-upload"></i> Carica immagine</label>
             <input type="file" class="input-file form-control" @error('image') is-invalid @enderror name="image" id="image_path">
@@ -97,5 +97,5 @@
       </form>
     </div>
   </div>
-<script src="/js/image_preview.js"></script>
+<script type="module" src="/js/image_preview.js"></script>
 @endsection

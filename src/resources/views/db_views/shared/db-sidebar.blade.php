@@ -1,6 +1,6 @@
 <div class='text-center' id='sidebar' style='width: 90%; margin: 5%'>
     <div class='row mb-3 mx-auto'>
-    <div class='col-6'>
+    <div class='col-12'>
       <a role="button" class="btn btn-tooltip btn-back" data-toggle="tooltip" data-placement="bottom" title="Back" href="{{ url()->previous() }}"><i class="fas fa-caret-left"></i></a>
     </div>
     </div>
@@ -34,8 +34,8 @@
             <a href="{{ route('meeting.create') }}" class="btn btn-side btn-primary btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Nuovo appuntamento" ><i class="fas fa-plus"></i> Appuntamento</a>
         </div>
     </div>
-    <hr class='styled-hr'>
-    @if (Auth::user()->auth_level == 'Admin' || Auth::user()->auth_level == 'Operator')
+    {{-- <hr class='styled-hr'> --}}
+    {{-- @if (Auth::user()->auth_level == 'Admin' || Auth::user()->auth_level == 'Operator') --}}
     {{-- <div class="row mb-2">
         <div class="col-6 d-flex justify-content-start">
             <h5>Info</h5>
@@ -47,7 +47,7 @@
             <a href="{{route('info.create')}}" class="btn btn-side btn-dark-blue-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Nuova" ><i class="fas fa-plus"></i></a>
         </div>
     </div> --}}
- <hr class='styled-hr'>
+ {{-- <hr class='styled-hr'> --}}
     {{-- <div class="row mb-2">
         <div class="col-6 d-flex justify-content-start">
             <h5>Offerte</h5>
@@ -59,7 +59,7 @@
             <a href="{{route('offer.create')}}" class="btn btn-side btn-dark-blue-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Nuova" ><i class="fas fa-plus"></i></a>
         </div>
     </div> --}}
-    <hr class='styled-hr'>
+    {{-- <hr class='styled-hr'> --}}
     {{-- <div class="row mb-2">
         <div class="col-6 d-flex justify-content-start">
             <h5>News</h5>
@@ -71,5 +71,5 @@
             <a href="{{route('news.create')}}" class="btn btn-side btn-dark-blue-out btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Nuova"><i class="fas fa-plus"></i></a>
         </div>
     </div> --}}
-    @endif
+    {{-- @endif --}}
 </div>

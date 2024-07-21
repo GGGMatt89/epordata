@@ -24,7 +24,7 @@
     @endphp
 @endif
 
-<div class='justify-content-center' id='calendar' style='width: 100%'>
+<div class='justify-content-center' id='calendar' style='width: 100%; margin-top: 20px'>
 </div>
 
 <script>

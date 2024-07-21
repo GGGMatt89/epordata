@@ -10,7 +10,7 @@ use App\Models\User;
 use App\Models\LastUpdate;
 use Carbon\Carbon;
 // use App\Mail\ScheduleMail;
-use App\Mail\ContactMail;
+use App\Mail\ContactFormMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 
@@ -136,7 +136,7 @@ class HomeController extends Controller
             $email_subject = "Website Contact Form:  $name";
             $email_body = "Avete ricevuto un nuovo messaggio dal form di contatto online del sito.\n\n" . "Qui i dettagli:\n\nNome: $name\n\nEmail: $email_address\n\nTelefono: $phone\n\nMessaggio:\n$message";
             Mail::to($receiver)
-                    ->send(new ContactMail($email_subject, $email_body));
+                    ->send(new ContactFormMail($email_subject, $email_body));
             return response()->json(['result' => true, 'name' => $name, 'email' => $email_subject, 'body' => $email_body]);
         } else {
             return response()->json(['result' => false]);

@@ -2,29 +2,29 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container d-flex justify-content-between">
         <a class="navbar-brand" href="{{ route('home', ['loader'=>false]) }}"><img src="/img/main_home/epordata_logo.png"></a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
         </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Servizi</a>
+            <a class="nav-link" href="#services">Servizi</a>
           </li>
           {{-- <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#products">News</a>
+            <a class="nav-link" href="#products">News</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#offers">Info & Offerte</a>
+              <a class="nav-link" href="#offers">Info & Offerte</a>
           </li> --}}
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#history">Chi siamo</a>
+            <a class="nav-link" href="#history">Chi siamo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#team">Il team</a>
+            <a class="nav-link" href="#team">Il team</a>
           </li>
           <li class="nav-item">
-            <a id='contact-link' class="nav-link js-scroll-trigger" href="#contact">Contattaci</a>
+            <a class="nav-link" href="#contact">Contattaci</a>
           </li>
           @if (Route::has('login'))
               @auth

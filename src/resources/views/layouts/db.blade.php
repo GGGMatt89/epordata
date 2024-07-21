@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="EPORDATA sas website">
-    <meta name="author" content="Mattia Fontana">
+    <meta name="author" content="Mattia Fontana @ Flumens Techlab">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -24,32 +24,25 @@
     <script src='/lib/fullcalendar/bootstrap/main.js'></script>
     <script src='/lib/fullcalendar/core/locales/es.js'></script>
 
-    <!-- Bootstrap select -->
-    {{-- <link rel="stylesheet" href="/lib/selectpicker/dist/css/bootstrap-select.min.css"> --}}
-    {{-- <link rel="stylesheet" href="/lib/bootstrap-select-1.14.0-beta3/css/bootstrap-select.min.css"> --}}
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/png" href="/img/main_home/epordata.ico"/>
 </head>
 
 <body id="page-top">
 
+
+    @include('sweetalert::alert')
+
 <!-- SCRIPT SECTION  -->
   <!-- Plugin JavaScript -->
   <script type="module" src="/lib/jquery-easing/jquery.easing.min.js"></script>
-  <!-- Bootstrap select script -->
-  {{-- <script type="module" src="/lib/selectpicker/js/bootstrap-select.js"></script> --}}
-  {{-- <script type="module" src="/lib/bootstrap-select-1.14.0-beta3/js/bootstrap-select.js"></script> --}}
   {{-- Template scripts --> clean and integrate in main file --}}
   <script src="/js/db_main.js"></script>
-
-  {{-- Contact form JavaScript --}}
-  {{-- <script src="/js/jqBootstrapValidation.js"></script>
-  <script src="/js/contact_me.js"></script> --}}
 
   {{-- Custom scripts --}}
     {{-- <script src="/js/calendar.js"></script> --}}
     <script src="/js/clock.js" defer></script>
-    {{-- <script src="/js/delete_confirmation.js"></script> --}}
+    <script src="/js/delete_confirmation.js"></script>
 
     {{-- @yield('navbar') --}}
     @include('db_views.shared.db-nav')
@@ -69,7 +62,6 @@
 
     {{-- @yield('footerbar') --}}
     @include('shared_views.footerbar')
-    @include('sweetalert::alert')
 
   </body>
 

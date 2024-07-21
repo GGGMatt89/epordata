@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Intervention\Image\Laravel\Facades\Image;
 
 use App\Models\Profile;
 
@@ -155,11 +156,8 @@ class ProfileController extends Controller
     {
         $imagename = request('first_name') . '_' . request('last_name') . '.' . $imageuploaded->extension();
         $storepath = config('app.local_public_path').'img/users';
-        $imageresized = ImageResize::make($imageuploaded->path());
-        $imageresized->resize(150, 150, function ($constraint) {
-            // $constraint->aspectRatio();
-            $constraint->upsize();
-        })->save($storepath.'/'.$imagename);
+        $imageresized = Image::read($imageuploaded->path());
+        $imageresized->scale(150, 150)->save($storepath.'/'.$imagename);
         return $imagename;
     }
 }
