@@ -3,11 +3,7 @@ import '../sass/app.scss';
 
 
 import './bootstrap';
-
-// JQUERY
-import jQuery from 'jquery';
-window.$ = window.jQuery = jQuery;
-
+import 'jquery-ui/dist/jquery-ui';
 // TEMPLATE
 import './template/agency';
 

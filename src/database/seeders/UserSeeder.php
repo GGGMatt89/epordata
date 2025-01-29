@@ -37,12 +37,12 @@ class UserSeeder extends Seeder
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
-        User::factory()
-            ->hasProfile(function (array $attributes, User $user) {
-                return ['first_name' => $user->name];
-            })
-            ->count(10)
-            ->create();
+        // User::factory()
+        //     ->hasProfile(function (array $attributes, User $user) {
+        //         return ['first_name' => $user->name];
+        //     })
+        //     ->count(10)
+        //     ->create();
 
     }
 }
